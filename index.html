@@ -1131,8 +1131,53 @@
             switchToRussian();
         }
     </script>
+
+    <!-- Cookie Banner -->
+    <div id="cookie-banner" class="fixed bottom-0 left-0 right-0 bg-gray-900 border-t border-gray-700 p-4 z-50 hidden">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center justify-between gap-4">
+                <div class="text-gray-300 text-sm text-center md:text-left">
+                    <p>🍪 Diese Website verwendet Cookies und localStorage für die ordnungsgemäße Funktion und zum Speichern Ihrer Einstellungen. 
+                    Wir nutzen auch Google Maps, das Daten erfassen kann.</p>
+                </div>
+                <div class="flex gap-3 flex-shrink-0">
+                    <button id="cookie-reject" class="px-4 py-2 bg-gray-700 hover:bg-gray-600 text-white rounded-lg text-sm transition-colors">
+                        Ablehnen
+                    </button>
+                    <button id="cookie-accept" class="px-4 py-2 bg-red-600 hover:bg-red-700 text-white rounded-lg text-sm transition-colors">
+                        Akzeptieren
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Cookie Consent
+        (function() {
+            const banner = document.getElementById('cookie-banner');
+            const acceptBtn = document.getElementById('cookie-accept');
+            const rejectBtn = document.getElementById('cookie-reject');
+            
+            // Sprawdź czy użytkownik już podjął decyzję
+            const consent = localStorage.getItem('cookieConsent');
+            
+            if (!consent) {
+                banner.classList.remove('hidden');
+            }
+            
+            acceptBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'accepted');
+                banner.classList.add('hidden');
+            });
+            
+            rejectBtn.addEventListener('click', function() {
+                localStorage.setItem('cookieConsent', 'rejected');
+                banner.classList.add('hidden');
+            });
+        })();
+    </script>
 </body>
 </html>
-
 
 
