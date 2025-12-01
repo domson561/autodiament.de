@@ -980,8 +980,21 @@
             
             <!-- Anfahrt -->
             <div class="mt-16 max-w-6xl mx-auto" data-aos="fade-up">
-                <h3 class="text-2xl font-bold text-white text-center mb-8">Anfahrt zur Autowerkstatt Autodiament</h3>
-                <div class="rounded-2xl overflow-hidden shadow-2xl h-96">
+                <h3 class="text-2xl font-bold text-white text-center mb-8" data-ru="contact-map-title">Anfahrt zur Autowerkstatt Autodiament</h3>
+                
+                <!-- Button für Google Maps (sichtbar auf Mobile) -->
+                <div class="md:hidden mb-4">
+                    <a href="https://maps.google.com/?q=Długa+23a,+72-006+Mierzyn,+Poland" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="flex items-center justify-center space-x-3 bg-red-600 hover:bg-red-700 text-white px-6 py-4 rounded-xl font-semibold transition-all w-full">
+                        <i class="fas fa-map-marked-alt text-xl"></i>
+                        <span data-ru="contact-map-open">In Google Maps öffnen</span>
+                    </a>
+                </div>
+                
+                <!-- Karte iframe -->
+                <div class="rounded-2xl overflow-hidden shadow-2xl h-64 sm:h-96">
                     <iframe 
                         src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2375.4789!2d14.5529!3d53.4289!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47aa086a1f8b7b45%3A0x1234567890abcdef!2sD%C5%82uga%2023a%2C%2072-006%20Mierzyn!5e0!3m2!1sde!2sde!4v1234567890123"
                         width="100%" 
@@ -993,9 +1006,21 @@
                         title="Karte zur Autowerkstatt Autodiament in Mierzyn bei Stettin">
                     </iframe>
                 </div>
-                <p class="text-gray-400 text-center mt-4">
+                
+                <!-- Button unter der Karte (sichtbar auf Desktop) -->
+                <div class="hidden md:block text-center mt-4">
+                    <a href="https://maps.google.com/?q=Długa+23a,+72-006+Mierzyn,+Poland" 
+                       target="_blank" 
+                       rel="noopener noreferrer"
+                       class="inline-flex items-center space-x-2 text-red-500 hover:text-red-400 transition-colors">
+                        <i class="fas fa-external-link-alt"></i>
+                        <span data-ru="contact-map-open-new">In neuem Tab öffnen</span>
+                    </a>
+                </div>
+                
+                <p class="text-gray-400 text-center mt-4" data-ru="contact-map-directions">
                     <i class="fas fa-route text-red-600 mr-2"></i>
-                    Von Berlin: 1,5h Fahrt • Nur 15 Min von der Grenze Kolbaskowo • Von der Grenze Kolbaskowo: 15 Minuten
+                    Von Berlin: 1,5h Fahrt • Von der Grenze Kolbaskowo: 15 Minuten
                 </p>
             </div>
         </div>
